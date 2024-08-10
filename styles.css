@@ -49,8 +49,8 @@ h3 {
 /* Existing styles... */
 
 .profile-picture {
-    max-width: 150px;
-    border-radius: 50%;
+    max-width: 100px;
+    border-radius: 20%;
     display: block;
     margin: 0 auto;
 }
