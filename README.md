@@ -1,25 +1,26 @@
 # IT Project Manager Portfolio
 
-Welcome to my portfolio! Below is a summary of the content you'll find in this repository:
+## About
+Welcome to my portfolio! This website showcases my work and experience as an IT Project Manager, including my academic achievements at the University of Essex, professional experience, and projects. It provides a comprehensive look at the skills and knowledge I've acquired throughout my career.
 
-## Sections
+## Features
+- **About Me**: A detailed introduction to my background, professional experience, and skills.
+- **University of Essex**: A breakdown of the modules completed during my MSc in Computing, including project details.
+  - **Modules:**
+    - Launching into Enterprise
+    - Security and Risk Management
+    - Information Technology Service Management
+    - Enterprise IT Project Management
+    - Into Data Science
+    - Cloud Operations and Management
+    - Research Methods and Professional Practice
+    - MSc Computing Project
+- **Education**: An overview of my academic background and certifications.
+- **CV**: A downloadable version of my curriculum vitae.
 
-- [About Me](about-me/index.html)  
-  Information about my background, skills, and experience.
+## Installation
+To view the portfolio locally:
 
-- [University of Essex](university/index.html)  
-  A detailed overview of my modules, coursework, and projects during my MSc in IT Project Management.
-
-  - [Launching into Enterprise](university/launching-into-enterprise/index.html)  
-    This module explores Enterprise IT, including a comparative study of automation using C and Python.
-  
-  - [Security and Risk Management](university/security-and-risk-management/index.html)  
-    Key topics include identifying and mitigating security risks in information systems.
-  
-  (Additional modules listed here...)
-
-- [Education](education/index.html)  
-  Details about my academic background.
-
-- [CV](cv/index.html)  
-  My professional resume, outlining my career history, skills, and accomplishments.
+1. Clone the repository to your local machine:
+   ```bash
+   git clone https://github.com/yourusername/portfolio.git
