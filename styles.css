@@ -1,31 +1,27 @@
-/* Set the background image for the entire body */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('assets/background.jpg'); /* Path to your background image */
-    background-size: cover; /* Ensures the image covers the entire page */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-image: url('../images/background.jpg'); /* Ensure path is correct */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     margin: 0;
     padding: 0;
-    color: #333; /* Text color */
+    color: #333;
 }
 
-/* Content section styling with opacity */
-section {
-    padding: 20px;
-    margin: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* White background with 80% opacity */
-    border-radius: 5px;
-}
-
-/* Other styles remain the same */
+/* Header styling */
 header {
-    background-color: rgba(51, 51, 51, 0.8); /* Slight opacity for header */
+    background-color: rgba(51, 51, 51, 0.8);
     color: white;
     padding: 10px 20px;
     text-align: center;
 }
 
+header h1 {
+    margin: 0;
+}
+
+/* Navigation styling */
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -41,6 +37,50 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Content section styling with background opacity */
+section {
+    padding: 20px;
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+}
+
+/* Specific styles for the EITM-Journal page (if needed) */
 h2, h3 {
     color: #333;
+}
+
+p {
+    line-height: 1.6;
+}
+
+/* Styling for back link */
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #0066cc;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* List styling */
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+/* Link styling */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
