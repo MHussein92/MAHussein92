@@ -16,8 +16,25 @@
     .then(response => response.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
+
+      // Set page-specific title text dynamically
+      const titleElement = document.getElementById("page-title");
+      if (titleElement) {
+        if (window.location.pathname.includes("about-me")) {
+          titleElement.textContent = "About Me – My Portfolio";
+        } else if (window.location.pathname.includes("education")) {
+          titleElement.textContent = "Education – My Portfolio";
+        } else if (window.location.pathname.includes("cv")) {
+          titleElement.textContent = "CV – My Portfolio";
+        } else if (window.location.pathname.includes("university")) {
+          titleElement.textContent = "University of Essex – My Portfolio";
+        } else {
+          titleElement.textContent = "Welcome to My Portfolio";
+        }
+      }
     });
 </script>
+
 
     <section>
         <h2>Introduction</h2>
