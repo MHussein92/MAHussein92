@@ -7,33 +7,35 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Placeholder for shared header -->
-<div id="header-placeholder"></div>
-
-<!-- Script to load shared header -->
-<script>
+ <script>
+  // Load shared header
   fetch("/MAHussein92/header.html")
     .then(response => response.text())
     .then(data => {
       document.getElementById("header-placeholder").innerHTML = data;
 
-      // Set page-specific title text dynamically
-      const titleElement = document.getElementById("page-title");
-      if (titleElement) {
-        if (window.location.pathname.includes("about-me")) {
-          titleElement.textContent = "About Me – My Portfolio";
-        } else if (window.location.pathname.includes("education")) {
-          titleElement.textContent = "Education – My Portfolio";
-        } else if (window.location.pathname.includes("cv")) {
-          titleElement.textContent = "CV – My Portfolio";
-        } else if (window.location.pathname.includes("university")) {
-          titleElement.textContent = "University of Essex – My Portfolio";
-        } else {
-          titleElement.textContent = "Welcome to My Portfolio";
+      // Wait a short moment to ensure header is added to DOM
+      setTimeout(() => {
+        const titleEl = document.getElementById("page-title");
+        if (!titleEl) return;
+
+        const path = window.location.pathname;
+
+        if (path.includes("about-me")) {
+          titleEl.textContent = "About Me – My Portfolio";
+        } else if (path.includes("education")) {
+          titleEl.textContent = "Education – My Portfolio";
+        } else if (path.includes("cv")) {
+          titleEl.textContent = "CV – My Portfolio";
+        } else if (path.includes("university")) {
+          titleEl.textContent = "University of Essex – My Portfolio";
+        } else if (path.endsWith("index.html") || path.endsWith("/")) {
+          titleEl.textContent = "Welcome to My Portfolio";
         }
-      }
+      }, 100); // 100 ms delay ensures the header has loaded
     });
 </script>
+
 
 
     <section>
