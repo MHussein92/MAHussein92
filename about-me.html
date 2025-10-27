@@ -7,23 +7,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-   <header>
-    <!-- Top Title Section -->
-    <div class="site-title">
-        <h1>My Portfolio</h1>
-    </div>
+  <!-- Placeholder for shared header -->
+<div id="header-placeholder"></div>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about-me.html">About Me</a></li>
-            <li><a href="university/index.html">University of Essex</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="cv.html">CV</a></li>
-        </ul>
-    </nav>
-</header>
+<!-- Script to load shared header -->
+<script>
+  fetch("/MAHussein92/header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+    });
+</script>
 
     <section>
         <h2>Introduction</h2>
