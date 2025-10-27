@@ -274,22 +274,23 @@ footer {
     flex-direction: column;
   }
 }
-/* ===== Fix for top title visibility ===== */
+/* ===== Header Title Visibility Fix ===== */
 .site-title {
-  background: rgba(0, 33, 71, 0.9); /* dark navy background */
-  color: #ffffff;
+  background: linear-gradient(135deg, #1b2a4e, #002147);
   text-align: center;
-  padding: 25px 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  padding: 35px 10px 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .site-title h1 {
   margin: 0;
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 2.2rem;
+  font-weight: 700;
   letter-spacing: 1px;
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  color: #f5f9ff; /* brighter white-blue */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7),
+               0 2px 6px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
 }
 
 
