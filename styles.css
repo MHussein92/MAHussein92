@@ -154,3 +154,125 @@ footer {
     }
 }
 
+/* =========================================================
+   GLOBAL PORTFOLIO STYLING — Applies to all pages
+   ========================================================= */
+
+/* ===== General Layout and Readability ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.3px;
+  color: #222;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+              url('assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  animation: fadeIn 1.2s ease-in;
+}
+
+/* Add clean padding and background for every section */
+section {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 10px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 1100px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* ===== Headings ===== */
+h1, h2, h3 {
+  color: #1b2a4e;
+}
+h2, h3 {
+  margin-top: 1.5em;
+}
+h2 {
+  border-bottom: 3px solid #00bcd4;
+  display: inline-block;
+  padding-bottom: 4px;
+  margin-bottom: 25px;
+}
+h3 {
+  border-left: 5px solid #00bcd4;
+  padding-left: 10px;
+}
+
+/* ===== Links (applies to all pages) ===== */
+a {
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+a:hover {
+  color: #00bcd4;
+  text-decoration: underline;
+  background-color: rgba(0, 188, 212, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 188, 212, 0.3);
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+/* ===== Navigation Bar (shared on all pages) ===== */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: #1b2a4e;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+nav ul li {
+  display: inline-block;
+  margin: 0;
+}
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 20px;
+  display: block;
+  transition: background 0.3s, color 0.3s;
+}
+nav ul li a:hover {
+  background: #00bcd4;
+  color: #fff;
+}
+
+/* ===== Footer (shared) ===== */
+footer {
+  background: #1b2a4e;
+  color: #d9e2ef;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 0.9em;
+}
+
+/* ===== Fade-In Animation for All Pages ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== Optional Responsive Layout (for mobile) ===== */
+@media (max-width: 768px) {
+  section {
+    margin: 15px;
+    padding: 25px;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+}
+
+
