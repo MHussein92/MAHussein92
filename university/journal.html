@@ -1,33 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Journals - University of Essex</title>
-    <link rel="stylesheet" href="../styles.css"> <!-- Link to the CSS file -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journals - University of Essex</title>
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-    <header>
-        <h1>University of Essex - Journals</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="index.html">University of Essex</a></li>
-                <li><a href="journal.html">Journals</a></li> <!-- Current page -->
-            </ul>
-        </nav>
-    </header>
+  <!-- Placeholder for the shared glowing header -->
+  <div id="header-placeholder"></div>
 
-    <section>
-        <h2>Module Journals</h2>
-        <ul>
-            <li><a href="journal/EITM-Journal.html">Enterprise IT Project Management Journal</a></li>
-            <li><a href="journal/SRM-Journal.html">Security and Risk Management Journal</a></li>
-            <li><a href="journal/COM-Journal.html">Cloud Operations and Management Journal</a></li>
-            <!-- Add more journal links as needed -->
-        </ul>
-    </section>
+  <!-- Script to load the shared glowing header -->
+  <script>
+    fetch("../header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+
+        // Wait briefly to make sure header is loaded before updating text
+        setTimeout(() => {
+          const titleEl = document.getElementById("page-title");
+          if (titleEl) {
+            // Display only the page title, no "My Portfolio"
+            titleEl.textContent = "University of Essex – Journals";
+          }
+        }, 100);
+      })
+      .catch(error => console.error("Error loading header:", error));
+  </script>
+
+  <section>
+    <h2>Module Journals</h2>
+    <ul>
+      <li><a href="journal/EITM-Journal.html">Enterprise IT Project Management Journal</a></li>
+      <li><a href="journal/SRM-Journal.html">Security and Risk Management Journal</a></li>
+      <li><a href="journal/COM-Journal.html">Cloud Operations and Management Journal</a></li>
+      <!-- Add more journal links as needed -->
+    </ul>
+  </section>
 
 </body>
 </html>
