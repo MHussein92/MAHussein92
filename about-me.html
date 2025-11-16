@@ -1,44 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me – My Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-  <!-- Shared Header -->
+  <!-- Placeholder for the shared header -->
   <div id="header-placeholder"></div>
 
-  <!-- Script to load the shared header -->
+  <!-- Script to load the shared glowing header -->
   <script>
     fetch("/MAHussein92/header.html")
       .then(response => response.text())
       .then(data => {
         document.getElementById("header-placeholder").innerHTML = data;
 
-        // Wait briefly to ensure header is loaded before changing the title
+        // Wait briefly to make sure header is loaded before changing text
         setTimeout(() => {
           const titleEl = document.getElementById("page-title");
-          if (!titleEl) return;
-
-          const path = window.location.pathname;
-
-          if (path.includes("about-me")) {
+          if (titleEl) {
             titleEl.textContent = "About Me – My Portfolio";
-          } else if (path.includes("education")) {
-            titleEl.textContent = "Education – My Portfolio";
-          } else if (path.includes("cv")) {
-            titleEl.textContent = "CV – My Portfolio";
-          } else if (path.includes("university")) {
-            titleEl.textContent = "University of Essex – My Portfolio";
-          } else if (path.endsWith("index.html") || path.endsWith("/")) {
-            titleEl.textContent = "Welcome to My Portfolio";
           }
-        }, 100); // 100 ms delay ensures the header has loaded
+        }, 100);
       })
       .catch(error => console.error("Error loading header:", error));
   </script>
 
-  <!-- Main content area styled like the homepage -->
-  <section class="card">
+  <section>
+    <h2>About Me</h2>
+
     <img src="/MAHussein92/assets/profile-picture.jpg" 
          alt="Profile Picture"
-         style="max-width: 200px; border-radius: 50%; display: block; margin: 0 auto;">
-
-    <h2 style="text-align:center;">About Me</h2>
+         style="max-width: 200px; border-radius: 50%; display: block; margin: 0 auto 20px;">
 
     <p>
       I am an IT Project Manager with nine years of hands-on experience in the computing industry, bringing a wealth of expertise in problem-solving, reliability, and efficiency. My proficiency in resolving complex issues and communicating procedures in an accessible manner is well-documented. I excel both independently and within team settings, consistently delivering high-quality IT services.
@@ -73,9 +68,5 @@
       I am enthusiastic about the opportunity to leverage my experience, skills, and ongoing education to contribute to the success of a forward-thinking organisation in the IT sector.
     </p>
   </section>
-
-  <!-- Shared Footer -->
-  <footer>
-    <p>© 2025 M.A. Hussein | University of Essex Online</p>
-  </footer>
 </body>
+</html>
