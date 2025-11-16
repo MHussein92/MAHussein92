@@ -3,33 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>University of Essex - Modules</title>
+  <title>University of Essex – Modules</title>
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-  <!-- Placeholder for the shared glowing header -->
+  <!-- Placeholder for shared glowing header -->
   <div id="header-placeholder"></div>
 
   <!-- Script to load the shared glowing header -->
   <script>
-    fetch("/MAHussein92/header.html")
-      .then(response => response.text())
+    // Load the shared header (one folder up)
+    fetch("../header.html")
+      .then(response => {
+        if (!response.ok) throw new Error("Header not found");
+        return response.text();
+      })
       .then(data => {
         document.getElementById("header-placeholder").innerHTML = data;
 
-        // Wait briefly to make sure header is loaded before updating text
+        // Update the glowing header text after it loads
         setTimeout(() => {
           const titleEl = document.getElementById("page-title");
-          if (titleEl) {
-            // This page only shows "University of Essex – Modules" (no "My Portfolio")
-            titleEl.textContent = "University of Essex – Modules";
-          }
-        }, 100);
+          if (titleEl) titleEl.textContent = "University of Essex – Modules";
+        }, 150);
       })
-      .catch(error => console.error("Error loading header:", error));
+      .catch(err => console.error("Header load error:", err));
   </script>
 
+  <!-- Main section -->
   <section>
     <h2>Modules</h2>
     <ul>
