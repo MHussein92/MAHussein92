@@ -1,60 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - About Me</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
 <body>
- <script>
-  // Load shared header
-  fetch("/MAHussein92/header.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("header-placeholder").innerHTML = data;
+  <!-- This is where the shared header will appear -->
+  <div id="header-placeholder"></div>
 
-      // Wait a short moment to ensure header is added to DOM
-      setTimeout(() => {
-        const titleEl = document.getElementById("page-title");
-        if (!titleEl) return;
+  <!-- Script to load the shared header -->
+  <script>
+    fetch("/MAHussein92/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
 
-        const path = window.location.pathname;
+        // Wait briefly to ensure header is loaded before changing the title
+        setTimeout(() => {
+          const titleEl = document.getElementById("page-title");
+          if (!titleEl) return;
 
-        if (path.includes("about-me")) {
-          titleEl.textContent = "About Me – My Portfolio";
-        } else if (path.includes("education")) {
-          titleEl.textContent = "Education – My Portfolio";
-        } else if (path.includes("cv")) {
-          titleEl.textContent = "CV – My Portfolio";
-        } else if (path.includes("university")) {
-          titleEl.textContent = "University of Essex – My Portfolio";
-        } else if (path.endsWith("index.html") || path.endsWith("/")) {
-          titleEl.textContent = "Welcome to My Portfolio";
-        }
-      }, 100); // 100 ms delay ensures the header has loaded
-    });
-</script>
+          const path = window.location.pathname;
 
+          if (path.includes("about-me")) {
+            titleEl.textContent = "About Me – My Portfolio";
+          } else if (path.includes("education")) {
+            titleEl.textContent = "Education – My Portfolio";
+          } else if (path.includes("cv")) {
+            titleEl.textContent = "CV – My Portfolio";
+          } else if (path.includes("university")) {
+            titleEl.textContent = "University of Essex – My Portfolio";
+          } else if (path.endsWith("index.html") || path.endsWith("/")) {
+            titleEl.textContent = "Welcome to My Portfolio";
+          }
+        }, 100); // 100 ms delay ensures the header has loaded
+      })
+      .catch(error => console.error("Error loading header:", error));
+  </script>
 
+  <!-- Your page content -->
+  <section>
+    <h2>Introduction</h2>
+    <img src="assets/profile-picture.jpg" alt="Profile Picture" class="profile-picture">
+    <p>I am an IT Project Manager with nine years of hands-on experience in the computing industry, bringing a wealth of expertise in problem-solving, reliability, and efficiency. My proficiency in resolving complex issues and communicating procedures in an accessible manner is well-documented. I excel both independently and within team settings, consistently delivering high-quality IT services.</p>
 
-    <section>
-        <h2>Introduction</h2>
-        <img src="assets/profile-picture.jpg" alt="Profile Picture" class="profile-picture">
-        <p>I am an IT Project Manager with nine years of hands-on experience in the computing industry, bringing a wealth of expertise in problem-solving, reliability, and efficiency. My proficiency in resolving complex issues and communicating procedures in an accessible manner is well-documented. I excel both independently and within team settings, consistently delivering high-quality IT services.
-Professional Experience
-My expertise encompasses IT infrastructure management, hardware and software troubleshooting, and computer system maintenance. Volunteering with the Refugee Council further demonstrates my self-motivation and capacity to operate effectively in diverse environments.
-Education and Certifications
-Currently, I am pursuing a Master in Enterprise IT Management, specializing in:
-Security and Risk Management
-Information Technology Service Management
-Project Management
-Data Science
-Cloud Operations and Management
-Research Methods and Computing Projects
-This advanced coursework enhances my competencies in risk assessment, project coordination, data analysis, cloud computing, and research methodologies. My educational background includes a BTEC Level 3 NVQ Diploma in Professional Competence for IT and Telecoms Professionals, and I am progressing towards certification in Microsoft 365 Fundamentals (MS-900).
-Continuous Learning
-Driven by a passion for technology and a dedication to continuous learning, I remain at the forefront of advancements in the IT field. I maintain a healthy work-life balance through my interests in football, tennis, and table tennis.
-Looking Ahead
-I am enthusiastic about the opportunity to leverage my experience, skills, and ongoing education to contribute to the success of a forward-thinking organization in the IT sector.
+    <h3>Professional Experience</h3>
+    <p>My expertise encompasses IT infrastructure management, hardware and software troubleshooting, and computer system maintenance. Volunteering with the Refugee Council further demonstrates my self-motivation and capacity to operate effectively in diverse environments.</p>
 
+    <h3>Education and Certifications</h3>
+    <p>Currently, I am pursuing a Master in Enterprise IT Management, specializing in:</p>
+    <ul>
+      <li>Security and Risk Management</li>
+      <li>Information Technology Service Management</li>
+      <li>Project Management</li>
+      <li>Data Science</li>
+      <li>Cloud Operations and Management</li>
+      <li>Research Methods and Computing Projects</li>
+    </ul>
+
+    <p>This advanced coursework enhances my competencies in risk assessment, project coordination, data analysis, cloud computing, and research methodologies. My educational background includes a BTEC Level 3 NVQ Diploma in Professional Competence for IT and Telecoms Professionals, and I am progressing towards certification in Microsoft 365 Fundamentals (MS-900).</p>
+
+    <h3>Continuous Learning</h3>
+    <p>Driven by a passion for technology and a dedication to continuous learning, I remain at the forefront of advancements in the IT field. I maintain a healthy work-life balance through my interests in football, tennis, and table tennis.</p>
+
+    <h3>Looking Ahead</h3>
+    <p>I am enthusiastic about the opportunity to leverage my experience, skills, and ongoing education to contribute to the success of a forward-thinking organisation in the IT sector.</p>
+  </section>
+</body>
