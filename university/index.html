@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>University of Essex - Modules</title>
-    <link rel="stylesheet" href="../styles.css"> <!-- Link to the CSS file -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University of Essex - Modules</title>
+  <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
 
-    <header>
-        <h1>University of Essex - Modules</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="index.html">University of Essex</a></li>
-                <li><a href="journal.html">Journals</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Placeholder for the shared glowing header -->
+  <div id="header-placeholder"></div>
 
-    <section>
-        <h2>Modules</h2>
-        <ul>
-            <li><a href="launching-into-enterprise.html">Launching into Enterprise</a></li>
-            <li><a href="security-and-risk-management.html">Security and Risk Management</a></li>
-            <li><a href="information-technology-service-management.html">Information Technology Service Management</a></li>
-            <li><a href="enterprise-it-project-management.html">Enterprise IT Project Management</a></li>
-            <li><a href="into-data-science.html">Into Data Science</a></li>
-            <li><a href="cloud-operations-and-management.html">Cloud Operations and Management</a></li>
-            <li><a href="research-methods-and-professional-practice.html">Research Methods and Professional Practice</a></li>
-            <li><a href="msc-computing-project.html">MSc Computing Project</a></li>
-        </ul>
-    </section>
+  <!-- Script to load the shared glowing header -->
+  <script>
+    fetch("/MAHussein92/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
 
-    <section>
-      
+        // Wait briefly to make sure header is loaded before updating text
+        setTimeout(() => {
+          const titleEl = document.getElementById("page-title");
+          if (titleEl) {
+            // This page only shows "University of Essex – Modules" (no "My Portfolio")
+            titleEl.textContent = "University of Essex – Modules";
+          }
+        }, 100);
+      })
+      .catch(error => console.error("Error loading header:", error));
+  </script>
+
+  <section>
+    <h2>Modules</h2>
+    <ul>
+      <li><a href="launching-into-enterprise.html">Launching into Enterprise</a></li>
+      <li><a href="security-and-risk-management.html">Security and Risk Management</a></li>
+      <li><a href="information-technology-service-management.html">Information Technology Service Management</a></li>
+      <li><a href="enterprise-it-project-management.html">Enterprise IT Project Management</a></li>
+      <li><a href="into-data-science.html">Into Data Science</a></li>
+      <li><a href="cloud-operations-and-management.html">Cloud Operations and Management</a></li>
+      <li><a href="research-methods-and-professional-practice.html">Research Methods and Professional Practice</a></li>
+      <li><a href="msc-computing-project.html">MSc Computing Project</a></li>
+    </ul>
+  </section>
 
 </body>
 </html>
