@@ -13,10 +13,7 @@
 
   <!-- Script to load the shared glowing header -->
   <script>
-    /*  NOTE:
-        We are using *relative* path ./../header.html
-        because this page is inside the /university/ folder.
-    */
+    // Load the shared header from the parent directory
     fetch("../header.html")
       .then(response => {
         if (!response.ok) throw new Error("Header not found");
@@ -25,7 +22,7 @@
       .then(data => {
         document.getElementById("header-placeholder").innerHTML = data;
 
-        // Change header text after it loads
+        // Update the glowing header title
         setTimeout(() => {
           const titleEl = document.getElementById("page-title");
           if (titleEl) titleEl.textContent = "University of Essex – Journals";
