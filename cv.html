@@ -1,48 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - My Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>CV</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="university/index.html">University of Essex</a></li>
-                <li><a href="about-me.html">About Me</a></li>
-                <li><a href="education.html">Education</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <h2>Professional Summary</h2>
-.</p>
 
-<p>I am an IT Project Manager with 9 years of experience in the computing industry. In my role, I develop project scope and
-objectives, manage resource allocation, track progress, and handle risk management. My focus is on building strong relationships
-with stakeholders and vendors to ensure seamless project delivery and integration into business operations.</p>
+  <!-- Placeholder for the shared glowing header -->
+  <div id="header-placeholder"></div>
 
-<p>Previously, I volunteered with the Refugee Council, teaching computing skills to refugees and demonstrating my commitment to IT
-and education. At Kids Planet Day Nurseries LTD, I managed IT projects across 200+ sites, overseeing network audits, risk
-assessments, and technology installations. My role included aligning IT strategies with business needs, providing clear guidance
-for smooth migrations, and optimising network performance.</p>
+  <!-- Script to load the shared glowing header -->
+  <script>
+    fetch("/MAHussein92/header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
 
-<p>I recently transitioned to Great Places Housing Association as an IT Project Manager. Here, I manage IT projects end-to-end,
-coordinating internal and external resources to ensure timely, on-budget delivery. My responsibilities include developing project
-scopes, managing resources, handling changes, and performing risk management. I also build strong client and stakeholder
-relationships and conduct post-project assessments for continuous improvement.</p>
+        // Wait briefly to make sure header is loaded before changing title
+        setTimeout(() => {
+          const titleEl = document.getElementById("page-title");
+          if (titleEl) {
+            titleEl.textContent = "CV – My Portfolio";
+          }
+        }, 100);
+      })
+      .catch(error => console.error("Error loading header:", error));
+  </script>
 
-<p>I am pursuing a Master’s in Enterprise IT Management and working towards a Microsoft 365 Fundamentals certification, further
-enhancing my expertise in IT strategy and cloud technologies. My experience also includes roles at The Snaith School, Spring Bank
-Community Centre, PC Planet, and Hull College.</p>
+  <section>
+    <h2>Professional Summary</h2>
 
-         <a href="documents/MY-CV.pdf" class="document-link" download>Download 
-My CV</a>
-        
-    </section>
+    <p>
+      I am an IT Project Manager with 9 years of experience in the computing industry. In my role, I develop project scope and
+      objectives, manage resource allocation, track progress, and handle risk management. My focus is on building strong relationships
+      with stakeholders and vendors to ensure seamless project delivery and integration into business operations.
+    </p>
+
+    <p>
+      Previously, I volunteered with the Refugee Council, teaching computing skills to refugees and demonstrating my commitment to IT
+      and education. At Kids Planet Day Nurseries LTD, I managed IT projects across 200+ sites, overseeing network audits, risk
+      assessments, and technology installations. My role included aligning IT strategies with business needs, providing clear guidance
+      for smooth migrations, and optimising network performance.
+    </p>
+
+    <p>
+      I recently transitioned to Great Places Housing Association as an IT Project Manager. Here, I manage IT projects end-to-end,
+      coordinating internal and external resources to ensure timely, on-budget delivery. My responsibilities include developing project
+      scopes, managing resources, handling changes, and performing risk management. I also build strong client and stakeholder
+      relationships and conduct post-project assessments for continuous improvement.
+    </p>
+
+    <p>
+      I am pursuing a Master’s in Enterprise IT Management and working towards a Microsoft 365 Fundamentals certification, further
+      enhancing my expertise in IT strategy and cloud technologies. My experience also includes roles at The Snaith School, Spring Bank
+      Community Centre, PC Planet, and Hull College.
+    </p>
+
+    <a href="documents/MY-CV.pdf" class="document-link" download>Download My CV</a>
+  </section>
+
 </body>
 </html>
