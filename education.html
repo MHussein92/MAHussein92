@@ -7,17 +7,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Education</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="university/index.html">University of Essex</a></li>
-                <li><a href="about-me.html">About Me</a></li>
-                <li><a href="cv.html">CV</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Placeholder for the shared header -->
+<div id="header-placeholder"></div>
+
+<!-- Script to load the shared glowing header -->
+<script>
+  fetch("/MAHussein92/header.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("header-placeholder").innerHTML = data;
+
+      // Wait briefly to make sure header is loaded before changing text
+      setTimeout(() => {
+        const titleEl = document.getElementById("page-title");
+        if (titleEl) {
+          titleEl.textContent = "Education – My Portfolio";
+        }
+      }, 100);
+    });
+</script>
+
     <section>
         <h2>Academic Background</h2>
 
